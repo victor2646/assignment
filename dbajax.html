@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<title>hahahehehoho網頁</title>	
+<html>
+  <center>
+  <h1>hahahehehoho網頁</h1>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>mongoDB AJAX demo</title>
+  <script type='text/javascript' src='http://code.jquery.com/jquery-1.9.1.js'></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+  <script type='text/javascript'>//<![CDATA[
+ $( document ).ready(function() { 
+    alert("welcome to hahahehehoho website")
+    $.ajax({
+      url: 'http://305db-idm4smb32469.codeanyapp.com:9004/mydb',
+      type: 'get',
+      dataType: 'jsonp',
+      // mongod is expecting the parameter name to be called "jsonp"
+      success: function (data) {
+        alert(data);
+        console.log('success', data);
+        $('#datashow').html(data);
+      },
+      error: function (XMLHttpRequest, textStatus, errorThrown) {
+        console.log('error', errorThrown);
+      }
+    });
+  //});//]]>
+   
+ });
+  </script>
+</head>
+<body>
+  <div ng-app="">
+ 
+<p>what are you doing :</p>
+<p>hahahehehoho : <input type="text" ng-model="name" ></p>
+<h1>oh...you are...{{name}}</h1>
+
+</div>
+ 
+<input type="button" onclick="location.href='http://google.com';" value="Go to Google" />
+<input type="button" onclick="location.href='/signuppage';" value="signup" />
+<input type="button" onclick="location.href='/callcar';" value="good morning" />
+
+</script>
+</body>
+  </center>
+</html>

@@ -1,0 +1,54 @@
+<html>
+  <center>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<script>
+$(document).ready(function() {
+
+      $.ajax({
+            type: 'GET',
+            url: 'http://www.pureexample.com/backend/ajax_crossdomain.aspx',
+            data:{todo:"jsonp"},
+          dataType: "jsonp",
+          crossDomain: true,          
+          cache:false, 
+
+            success: function(data) {
+              
+                 var html = [];
+            /* parse JSON */
+            data = $.parseJSON(data);
+            /* loop through array */
+            $.each(data, function(index, d){            
+                html.push("Manufacturer : ", d.Manufacturer, ", ",
+                          "Sold : ", d.Sold, ", ", 
+                          "Month : ", d.Month, "<br>");
+            }); 
+               $("#div391").html(html.join('')).css("background-color", "orange");
+            },
+            error: function(xhr, status, error) {
+                console.log('Error: ' + error.message);
+            }
+        });
+      /*  $.get( "http://www.wunderground.com/weather-forecast/zmw:00000.1.59358", function( data ) {
+          alert(data);
+            $( ".result" ).html( data );
+           alert( "Load was performed." );
+           });*/
+
+ 
+});
+</script>
+<body>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <a href="/callyoutube">youtube</a>
+  <br><br><br><br><br>
+  <a href="/callapiweather">weather</a>
+
+  
+  
+  
+  
+</body>
+  </center>
+</html>
